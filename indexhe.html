@@ -71,18 +71,32 @@
         <p>אשמח לשמוע מכם ולהתחיל בשיתוף פעולה!<br>
         Email: <a href="mailto:gertsenshteiniakov@outlook.com">gertsenshteiniakov@outlook.com</a></p>
        
-<form action="https://script.google.com/macros/s/AKfycbybcLBaqZ1K68Ujbb_6J_CCuBhYdyMB8BBA1b-xCS5LBuIHMFFbvWGnizkw6Ifo2IjXBA/exec" method="POST" enctype="multipart/form-data">
-            <label>שם פרטי:</label><input type="text" name="name" required><br>
-            <label>שם משפחה:</label><input type="text" name="surname" required><br>
-            <label>ארגון / חברה:</label><input type="text" name="organization"><br>
-            <label>אתר אינטרנט:</label><input type="url" name="site"><br>
-            <label>טלפון:</label><input type="tel" name="phone"><br>
-            <label>כתובת דוא"ל:</label><input type="email" name="email" required><br>
-            <label>פרופילים ברשתות חברתיות (LinkedIn, GitHub וכו'):</label><textarea name="social"></textarea><br>
-            <label>קובץ (קורות חיים, הצעה או אחר):</label><input type="file" name="file"><br>
-            <button type="submit">שלח הודעה</button>
-        </form>
-    </section>
+<<form id="contact-form" onsubmit="handleSubmit(event)">
+    <label>שם פרטי:</label><input type="text" name="name" required><br>
+    <label>שם משפחה:</label><input type="text" name="surname" required><br>
+    <label>ארגון / חברה:</label><input type="text" name="organization"><br>
+    <label>אתר אינטרנט:</label><input type="url" name="site"><br>
+    <label>טלפון:</label><input type="tel" name="phone"><br>
+    <label>דוא"ל:</label><input type="email" name="email" required><br>
+    <label>פרופילים חברתיים:</label><textarea name="social"></textarea><br>
+    <label>קובץ:</label><input type="file" name="file"><br>
+    <button type="submit">שלח הודעה</button>
+</form>
+
+<div id="form-message" style="margin-top: 20px; color: #28a745; font-weight: bold; font-size: 1.1em; display: none;">
+    ההודעה נשלחה בהצלחה! תודה — אחזור אליך בהקדם.
+</div>
+
+<script>
+function handleSubmit(event) {
+    event.preventDefault();
+    var form = document.getElementById('contact-form');
+    var message = document.getElementById('form-message');
+    message.style.display = 'block';
+    form.reset();
+    setTimeout(() => { message.style.display = 'none'; }, 8000);
+}
+</script>    </section>
 
     <footer>
         <p>© 2026 יעקב גרצנשטיין. כל הזכויות שמורות.</p>
