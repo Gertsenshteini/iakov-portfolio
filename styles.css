@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    direction: ltr; /* Default LTR */
+}
+
+body[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+nav {
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-top: 20px; /* Небольшой отступ сверху для навигации */
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+body[dir="rtl"] nav {
+    text-align: center; /* Центрируем для RTL */
+}
+
+.header-photo {
+    position: relative;
+    text-align: center;
+    color: white;
+    background-color: #333;
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px; /* Небольшой отступ сверху перед словами "freelans remote job" (подзаголовок) */
+}
+
+.header-photo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.header-photo h1 {
+    position: relative;
+    z-index: 10;
+    font-size: 3em;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+    margin-bottom: 10px;
+}
+
+.header-photo p {
+    position: relative;
+    z-index: 10;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+body[dir="rtl"] .header-photo {
+    text-align: center; /* Центрируем для RTL */
+}
+
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+body[dir="rtl"] section {
+    text-align: right;
+}
+
+h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+body[dir="rtl"] h2 {
+    text-align: right;
+    border-bottom: none; /* Адаптируем границу для RTL */
+    border-right: 2px solid #007bff; /* Или left, в зависимости от дизайна */
+    padding-right: 10px; /* Адаптируем отступ */
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+body[dir="rtl"] ul {
+    padding-right: 0;
+    padding-left: 20px; /* Адаптируем отступы для RTL */
+}
+
+ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+body[dir="rtl"] ul li {
+    text-align: right;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+#downloads ul li a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+#downloads ul li a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #555;
+    text-align: left; /* Default LTR */
+}
+
+body[dir="rtl"] form label {
+    text-align: right;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    text-align: left; /* Default LTR */
+}
+
+body[dir="rtl"] form input,
+body[dir="rtl"] form textarea {
+    text-align: right;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 0; /* Default LTR */
+}
+
+body[dir="rtl"] button {
+    margin-left: 0;
+    margin-right: auto; /* Адаптируем для RTL */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
+}
+
+body[dir="rtl"] footer {
+    text-align: center; /* Центрируем для RTL */
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-photo {
+        min-height: 300px;
+    }
+   
+    .header-photo h1 {
+        font-size: 2em;
+    }
+   
+    .header-photo p {
+        font-size: 1.2em;
+    }
+   
+    section {
+        margin: 20px;
+        padding: 20px;
+    }
+}
