@@ -1,15 +1,22 @@
+/* ==========================================
+   GLOBAL RESET & BASE STYLES
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth; /* ✅ ДОБАВЛЕНО: Плавная прокрутка для якорных ссылок */
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, Arial, sans-serif; /* ✏️ УЛУЧШЕНО: Современный шрифт */
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
-    direction: ltr; /* Default LTR */
+    direction: ltr;
 }
 
 body[dir="rtl"] {
@@ -17,12 +24,18 @@ body[dir="rtl"] {
     text-align: right;
 }
 
+/* ==========================================
+   NAVIGATION
+   ========================================== */
 nav {
     background-color: #fff;
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
-    margin-top: 20px; /* Небольшой отступ сверху для навигации */
+    /* ❌ УБРАНО: margin-top: 20px - избыточный отступ */
+    position: sticky; /* ✅ ДОБАВЛЕНО: Sticky навигация */
+    top: 0;
+    z-index: 100;
 }
 
 nav a {
@@ -30,17 +43,16 @@ nav a {
     text-decoration: none;
     margin: 0 10px;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s ease; /* ✏️ УЛУЧШЕНО: Добавлен ease */
 }
 
 nav a:hover {
     color: #007bff;
 }
 
-body[dir="rtl"] nav {
-    text-align: center; /* Центрируем для RTL */
-}
-
+/* ==========================================
+   HEADER WITH PHOTO
+   ========================================== */
 .header-photo {
     position: relative;
     text-align: center;
@@ -52,7 +64,7 @@ body[dir="rtl"] nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 40px; /* Небольшой отступ сверху перед словами "freelans remote job" (подзаголовок) */
+    /* ❌ УБРАНО: margin-top: 40px - избыточный отступ */
 }
 
 .header-photo img {
@@ -64,6 +76,11 @@ body[dir="rtl"] nav {
     object-fit: cover;
     opacity: 0.6;
     z-index: 1;
+    transition: opacity 0.5s ease; /* ✅ ДОБАВЛЕНО: Плавный переход */
+}
+
+.header-photo:hover img {
+    opacity: 0.7; /* ✅ ДОБАВЛЕНО: Hover эффект на фото */
 }
 
 .header-photo h1 {
@@ -72,6 +89,7 @@ body[dir="rtl"] nav {
     font-size: 3em;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
     margin-bottom: 10px;
+    animation: fadeInDown 1s ease; /* ✅ ДОБАВЛЕНО: Анимация появления */
 }
 
 .header-photo p {
@@ -79,12 +97,35 @@ body[dir="rtl"] nav {
     z-index: 10;
     font-size: 1.5em;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+    animation: fadeInUp 1s ease 0.3s backwards; /* ✅ ДОБАВЛЕНО: Анимация с задержкой */
 }
 
-body[dir="rtl"] .header-photo {
-    text-align: center; /* Центрируем для RTL */
+/* ✅ ДОБАВЛЕНО: Анимации для заголовка */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   SECTIONS
+   ========================================== */
 section {
     max-width: 900px;
     margin: 40px auto;
@@ -92,12 +133,17 @@ section {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* ✅ ДОБАВЛЕНО: Hover эффект */
 }
 
-body[dir="rtl"] section {
-    text-align: right;
+section:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15); /* ✅ ДОБАВЛЕНО: Усиленная тень при наведении */
+    transform: translateY(-5px); /* ✅ ДОБАВЛЕНО: Подъем секции */
 }
 
+/* ==========================================
+   HEADINGS
+   ========================================== */
 h2 {
     color: #007bff;
     margin-bottom: 20px;
@@ -105,13 +151,15 @@ h2 {
     padding-bottom: 10px;
 }
 
+/* ✏️ ИСПРАВЛЕНО: RTL стили для заголовков */
 body[dir="rtl"] h2 {
     text-align: right;
-    border-bottom: none; /* Адаптируем границу для RTL */
-    border-right: 2px solid #007bff; /* Или left, в зависимости от дизайна */
-    padding-right: 10px; /* Адаптируем отступ */
+    /* ❌ УБРАНО: Неработающие border-right стили */
 }
 
+/* ==========================================
+   LISTS
+   ========================================== */
 ul {
     list-style: none;
     padding-left: 0;
@@ -119,34 +167,45 @@ ul {
 
 body[dir="rtl"] ul {
     padding-right: 0;
-    padding-left: 20px; /* Адаптируем отступы для RTL */
 }
 
 ul li {
-    padding: 8px 0;
+    padding: 10px 0; /* ✏️ УВЕЛИЧЕНО: С 8px до 10px для лучшей читаемости */
     border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease, padding-left 0.3s ease; /* ✅ ДОБАВЛЕНО: Hover эффект */
 }
 
-body[dir="rtl"] ul li {
-    text-align: right;
+ul li:hover {
+    background-color: #f9f9f9; /* ✅ ДОБАВЛЕНО: Подсветка при наведении */
+    padding-left: 10px; /* ✅ ДОБАВЛЕНО: Сдвиг вправо */
+}
+
+body[dir="rtl"] ul li:hover {
+    padding-left: 0;
+    padding-right: 10px; /* ✅ ДОБАВЛЕНО: Сдвиг влево для RTL */
 }
 
 ul li:last-child {
     border-bottom: none;
 }
 
-#downloads ul li a {
+/* ==========================================
+   LINKS
+   ========================================== */
+a {
     color: #007bff;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s ease; /* ✅ ДОБАВЛЕНО: Плавный переход */
 }
 
-#downloads ul li a:hover {
+a:hover {
     color: #0056b3;
     text-decoration: underline;
 }
 
+/* ==========================================
+   FORMS
+   ========================================== */
 form {
     margin-top: 20px;
 }
@@ -156,7 +215,7 @@ form label {
     margin-top: 15px;
     font-weight: bold;
     color: #555;
-    text-align: left; /* Default LTR */
+    text-align: left;
 }
 
 body[dir="rtl"] form label {
@@ -166,12 +225,13 @@ body[dir="rtl"] form label {
 form input,
 form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px; /* ✏️ УВЕЛИЧЕНО: С 10px до 12px */
     margin-top: 5px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1em;
-    text-align: left; /* Default LTR */
+    text-align: left;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* ✅ ДОБАВЛЕНО: Плавный переход */
 }
 
 body[dir="rtl"] form input,
@@ -183,6 +243,7 @@ form input:focus,
 form textarea:focus {
     outline: none;
     border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1); /* ✅ ДОБАВЛЕНО: Свечение при фокусе */
 }
 
 form textarea {
@@ -190,6 +251,9 @@ form textarea {
     resize: vertical;
 }
 
+/* ==========================================
+   BUTTONS
+   ========================================== */
 button {
     margin-top: 20px;
     padding: 12px 30px;
@@ -198,20 +262,23 @@ button {
     border: none;
     border-radius: 4px;
     font-size: 1em;
+    font-weight: bold; /* ✅ ДОБАВЛЕНО: Жирный текст */
     cursor: pointer;
-    transition: background-color 0.3s;
-    margin-right: 0; /* Default LTR */
-}
-
-body[dir="rtl"] button {
-    margin-left: 0;
-    margin-right: auto; /* Адаптируем для RTL */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* ✅ ДОБАВЛЕНО: Transform */
 }
 
 button:hover {
     background-color: #0056b3;
+    transform: translateY(-2px); /* ✅ ДОБАВЛЕНО: Подъем кнопки */
 }
 
+button:active {
+    transform: translateY(0); /* ✅ ДОБАВЛЕНО: Возврат при клике */
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
 footer {
     text-align: center;
     padding: 20px;
@@ -220,11 +287,36 @@ footer {
     margin-top: 40px;
 }
 
-body[dir="rtl"] footer {
-    text-align: center; /* Центрируем для RTL */
+/* ==========================================
+   SUCCESS MESSAGE
+   ========================================== */
+#form-message {
+    margin-top: 20px;
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1.1em;
+    display: none;
+    padding: 15px; /* ✅ ДОБАВЛЕНО: Padding */
+    background-color: #d4edda; /* ✅ ДОБАВЛЕНО: Зеленый фон */
+    border: 1px solid #c3e6cb; /* ✅ ДОБАВЛЕНО: Граница */
+    border-radius: 4px; /* ✅ ДОБАВЛЕНО: Скругление */
+    animation: slideIn 0.5s ease; /* ✅ ДОБАВЛЕНО: Анимация появления */
 }
 
-/* Адаптивность */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
 @media (max-width: 768px) {
     .header-photo {
         min-height: 300px;
@@ -239,7 +331,35 @@ body[dir="rtl"] footer {
     }
    
     section {
-        margin: 20px;
+        margin: 20px 15px; /* ✏️ УЛУЧШЕНО: Добавлены боковые отступы */
         padding: 20px;
+    }
+    
+    nav {
+        padding: 10px; /* ✏️ УМЕНЬШЕНО: Для мобильных */
+    }
+    
+    nav a {
+        margin: 0 5px; /* ✏️ УМЕНЬШЕНО: Для мобильных */
+        font-size: 0.9em; /* ✅ ДОБАВЛЕНО: Меньший шрифт */
+    }
+    
+    button {
+        width: 100%; /* ✅ ДОБАВЛЕНО: Полная ширина на мобильных */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-photo h1 {
+        font-size: 1.5em; /* ✅ ДОБАВЛЕНО: Еще меньше для маленьких экранов */
+    }
+    
+    .header-photo p {
+        font-size: 1em;
+    }
+    
+    section {
+        margin: 15px 10px;
+        padding: 15px;
     }
 }
