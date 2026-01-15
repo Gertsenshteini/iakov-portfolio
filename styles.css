@@ -8,11 +8,11 @@
 }
 
 html {
-    scroll-behavior: smooth; /* ✅ ДОБАВЛЕНО: Плавная прокрутка для якорных ссылок */
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, Arial, sans-serif; /* ✏️ УЛУЧШЕНО: Современный шрифт */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, Arial, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
@@ -21,7 +21,6 @@ body {
 
 body[dir="rtl"] {
     direction: rtl;
-    text-align: right;
 }
 
 /* ==========================================
@@ -32,8 +31,7 @@ nav {
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
-    /* ❌ УБРАНО: margin-top: 20px - избыточный отступ */
-    position: sticky; /* ✅ ДОБАВЛЕНО: Sticky навигация */
+    position: sticky;
     top: 0;
     z-index: 100;
 }
@@ -43,7 +41,7 @@ nav a {
     text-decoration: none;
     margin: 0 10px;
     font-weight: bold;
-    transition: color 0.3s ease; /* ✏️ УЛУЧШЕНО: Добавлен ease */
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
@@ -64,7 +62,6 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* ❌ УБРАНО: margin-top: 40px - избыточный отступ */
 }
 
 .header-photo img {
@@ -76,11 +73,11 @@ nav a:hover {
     object-fit: cover;
     opacity: 0.6;
     z-index: 1;
-    transition: opacity 0.5s ease; /* ✅ ДОБАВЛЕНО: Плавный переход */
+    transition: opacity 0.5s ease;
 }
 
 .header-photo:hover img {
-    opacity: 0.7; /* ✅ ДОБАВЛЕНО: Hover эффект на фото */
+    opacity: 0.7;
 }
 
 .header-photo h1 {
@@ -89,7 +86,7 @@ nav a:hover {
     font-size: 3em;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
     margin-bottom: 10px;
-    animation: fadeInDown 1s ease; /* ✅ ДОБАВЛЕНО: Анимация появления */
+    animation: fadeInDown 1s ease;
 }
 
 .header-photo p {
@@ -97,10 +94,9 @@ nav a:hover {
     z-index: 10;
     font-size: 1.5em;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
-    animation: fadeInUp 1s ease 0.3s backwards; /* ✅ ДОБАВЛЕНО: Анимация с задержкой */
+    animation: fadeInUp 1s ease 0.3s backwards;
 }
 
-/* ✅ ДОБАВЛЕНО: Анимации для заголовка */
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -124,6 +120,13 @@ nav a:hover {
 }
 
 /* ==========================================
+   MAIN CONTENT
+   ========================================== */
+main {
+    width: 100%;
+}
+
+/* ==========================================
    SECTIONS
    ========================================== */
 section {
@@ -133,12 +136,17 @@ section {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* ✅ ДОБАВЛЕНО: Hover эффект */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    text-align: left;
+}
+
+body[dir="rtl"] section {
+    text-align: right;
 }
 
 section:hover {
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15); /* ✅ ДОБАВЛЕНО: Усиленная тень при наведении */
-    transform: translateY(-5px); /* ✅ ДОБАВЛЕНО: Подъем секции */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
 }
 
 /* ==========================================
@@ -149,12 +157,23 @@ h2 {
     margin-bottom: 20px;
     border-bottom: 2px solid #007bff;
     padding-bottom: 10px;
+    text-align: left;
 }
 
-/* ✏️ ИСПРАВЛЕНО: RTL стили для заголовков */
 body[dir="rtl"] h2 {
     text-align: right;
-    /* ❌ УБРАНО: Неработающие border-right стили */
+}
+
+/* ==========================================
+   PARAGRAPHS
+   ========================================== */
+p {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+body[dir="rtl"] p {
+    text-align: right;
 }
 
 /* ==========================================
@@ -163,30 +182,42 @@ body[dir="rtl"] h2 {
 ul {
     list-style: none;
     padding-left: 0;
+    text-align: left;
 }
 
 body[dir="rtl"] ul {
+    padding-left: 0;
     padding-right: 0;
+    text-align: right;
 }
 
 ul li {
-    padding: 10px 0; /* ✏️ УВЕЛИЧЕНО: С 8px до 10px для лучшей читаемости */
+    padding: 10px 0;
     border-bottom: 1px solid #eee;
-    transition: background-color 0.3s ease, padding-left 0.3s ease; /* ✅ ДОБАВЛЕНО: Hover эффект */
+    transition: background-color 0.3s ease, padding-left 0.3s ease, padding-right 0.3s ease;
+    text-align: left;
+}
+
+body[dir="rtl"] ul li {
+    text-align: right;
 }
 
 ul li:hover {
-    background-color: #f9f9f9; /* ✅ ДОБАВЛЕНО: Подсветка при наведении */
-    padding-left: 10px; /* ✅ ДОБАВЛЕНО: Сдвиг вправо */
+    background-color: #f9f9f9;
+    padding-left: 10px;
 }
 
 body[dir="rtl"] ul li:hover {
     padding-left: 0;
-    padding-right: 10px; /* ✅ ДОБАВЛЕНО: Сдвиг влево для RTL */
+    padding-right: 10px;
 }
 
 ul li:last-child {
     border-bottom: none;
+}
+
+ul li strong {
+    color: #007bff;
 }
 
 /* ==========================================
@@ -195,7 +226,7 @@ ul li:last-child {
 a {
     color: #007bff;
     text-decoration: none;
-    transition: color 0.3s ease; /* ✅ ДОБАВЛЕНО: Плавный переход */
+    transition: color 0.3s ease;
 }
 
 a:hover {
@@ -204,49 +235,69 @@ a:hover {
 }
 
 /* ==========================================
-   FORMS
+   FORMS - ПРАВИЛЬНАЯ СТРУКТУРА
    ========================================== */
 form {
     margin-top: 20px;
 }
 
-form label {
+/* ✅ НОВАЯ СТРУКТУРА: form-group вместо <br> */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
     display: block;
-    margin-top: 15px;
+    margin-bottom: 8px;
     font-weight: bold;
     color: #555;
     text-align: left;
 }
 
-body[dir="rtl"] form label {
+body[dir="rtl"] .form-group label {
     text-align: right;
 }
 
-form input,
-form textarea {
+.form-group input,
+.form-group textarea {
     width: 100%;
-    padding: 12px; /* ✏️ УВЕЛИЧЕНО: С 10px до 12px */
-    margin-top: 5px;
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1em;
+    font-family: inherit;
     text-align: left;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* ✅ ДОБАВЛЕНО: Плавный переход */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    direction: ltr;
 }
 
-body[dir="rtl"] form input,
-body[dir="rtl"] form textarea {
+body[dir="rtl"] .form-group input,
+body[dir="rtl"] .form-group textarea {
     text-align: right;
+    direction: rtl;
 }
 
-form input:focus,
-form textarea:focus {
+/* ✅ ИСКЛЮЧЕНИЕ: Email и URL всегда LTR */
+.form-group input[type="email"],
+.form-group input[type="url"] {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+body[dir="rtl"] .form-group input[type="email"],
+body[dir="rtl"] .form-group input[type="url"] {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
     outline: none;
     border-color: #007bff;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1); /* ✅ ДОБАВЛЕНО: Свечение при фокусе */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
 }
 
-form textarea {
+.form-group textarea {
     min-height: 100px;
     resize: vertical;
 }
@@ -255,25 +306,27 @@ form textarea {
    BUTTONS
    ========================================== */
 button {
-    margin-top: 20px;
-    padding: 12px 30px;
+    margin-top: 10px;
+    padding: 14px 30px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 4px;
-    font-size: 1em;
-    font-weight: bold; /* ✅ ДОБАВЛЕНО: Жирный текст */
+    font-size: 1.1em;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* ✅ ДОБАВЛЕНО: Transform */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: 100%;
 }
 
 button:hover {
     background-color: #0056b3;
-    transform: translateY(-2px); /* ✅ ДОБАВЛЕНО: Подъем кнопки */
+    transform: translateY(-2px);
 }
 
 button:active {
-    transform: translateY(0); /* ✅ ДОБАВЛЕНО: Возврат при клике */
+    transform: translateY(0);
 }
 
 /* ==========================================
@@ -296,11 +349,16 @@ footer {
     font-weight: bold;
     font-size: 1.1em;
     display: none;
-    padding: 15px; /* ✅ ДОБАВЛЕНО: Padding */
-    background-color: #d4edda; /* ✅ ДОБАВЛЕНО: Зеленый фон */
-    border: 1px solid #c3e6cb; /* ✅ ДОБАВЛЕНО: Граница */
-    border-radius: 4px; /* ✅ ДОБАВЛЕНО: Скругление */
-    animation: slideIn 0.5s ease; /* ✅ ДОБАВЛЕНО: Анимация появления */
+    padding: 15px;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    animation: slideIn 0.5s ease;
+    text-align: left;
+}
+
+body[dir="rtl"] #form-message {
+    text-align: right;
 }
 
 @keyframes slideIn {
@@ -331,27 +389,32 @@ footer {
     }
    
     section {
-        margin: 20px 15px; /* ✏️ УЛУЧШЕНО: Добавлены боковые отступы */
+        margin: 20px 15px;
         padding: 20px;
     }
     
     nav {
-        padding: 10px; /* ✏️ УМЕНЬШЕНО: Для мобильных */
+        padding: 10px;
     }
     
     nav a {
-        margin: 0 5px; /* ✏️ УМЕНЬШЕНО: Для мобильных */
-        font-size: 0.9em; /* ✅ ДОБАВЛЕНО: Меньший шрифт */
+        margin: 0 5px;
+        font-size: 0.9em;
     }
     
     button {
-        width: 100%; /* ✅ ДОБАВЛЕНО: Полная ширина на мобильных */
+        width: 100%;
+        padding: 12px 20px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
     }
 }
 
 @media (max-width: 480px) {
     .header-photo h1 {
-        font-size: 1.5em; /* ✅ ДОБАВЛЕНО: Еще меньше для маленьких экранов */
+        font-size: 1.5em;
     }
     
     .header-photo p {
@@ -361,5 +424,10 @@ footer {
     section {
         margin: 15px 10px;
         padding: 15px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
     }
 }
