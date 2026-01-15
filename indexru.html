@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -34,7 +34,7 @@
     <header class="header-photo">
         <img 
             src="images/photo-small.jpg" 
-       srcset="images/photo-small.jpg 369w,
+            srcset="images/photo-small.jpg 369w,
                     images/photo-medium.jpg 923w,
                     images/photo-large.jpg 1467w,
                     images/photo-xl.jpg 1920w"
@@ -66,32 +66,33 @@
         <h2>Контакты</h2>
         <p>Email: <a href="mailto:gertsenshteiniakov@outlook.com">gertsenshteiniakov@outlook.com</a></p>
         
-<form id="contact-form" onsubmit="handleSubmit(event)">
-    <label>Имя:</label><input type="text" name="name" required><br>
-    <label>Фамилия:</label><input type="text" name="surname" required><br>
-    <label>Организация:</label><input type="text" name="organization"><br>
-    <label>Сайт:</label><input type="url" name="site"><br>
-    <label>Телефон:</label><input type="tel" name="phone"><br>
-    <label>Email:</label><input type="email" name="email" required><br>
-    <label>Социальные профили :</label><textarea name="social"></textarea><br>
-    <label>Файл :</label><input type="file" name="file"><br>
-    <button type="submit">Отправить</button>
-</form>
+        <form id="contact-form" onsubmit="handleSubmit(event)">
+            <label>Имя:</label><input type="text" name="name" required><br>
+            <label>Фамилия:</label><input type="text" name="surname" required><br>
+            <label>Организация:</label><input type="text" name="organization"><br>
+            <label>Сайт:</label><input type="url" name="site"><br>
+            <label>Телефон:</label><input type="tel" name="phone"><br>
+            <label>Email:</label><input type="email" name="email" required><br>
+            <label>Социальные профили:</label><textarea name="social"></textarea><br>
+            <label>Файл:</label><input type="file" name="file"><br>
+            <button type="submit">Отправить</button>
+        </form>
 
-<div id="form-message" style="margin-top: 20px; color: #28a745; font-weight: bold; font-size: 1.1em; display: none;">
-    Сообщение успешно отправлено! Спасибо — свяжусь с вами в ближайшее время.
-</div>
+        <div id="form-message" style="margin-top: 20px; color: #28a745; font-weight: bold; font-size: 1.1em; display: none;">
+            Сообщение успешно отправлено! Спасибо — свяжусь с вами в ближайшее время.
+        </div>
 
-<script>
-function handleSubmit(event) {
-    event.preventDefault();
-    var form = document.getElementById('contact-form');
-    var message = document.getElementById('form-message');
-    message.style.display = 'block';
-    form.reset();
-    setTimeout(() => { message.style.display = 'none'; }, 8000);
-}
-</script>    </section>
+        <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            var form = document.getElementById('contact-form');
+            var message = document.getElementById('form-message');
+            message.style.display = 'block';
+            form.reset();
+            setTimeout(() => { message.style.display = 'none'; }, 8000);
+        }
+        </script>
+    </section>
     <footer>
         <p>© 2026 Яков Герценштейн. Все права защищены.</p>
     </footer>
