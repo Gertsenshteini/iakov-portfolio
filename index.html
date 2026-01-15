@@ -3,34 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iakov Gertsenshtein - Remote Freelance Developer</title>
+    <title>Iakov Gertsenshtein - Remote Freelance Developer | Docker, Python, Node.js Expert</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <meta name="description" content="Iakov Gertsenshtein - remote freelance developer. Skills: Docker, Python, Node.js, NoSQL, APIs, Git, Linux. Winner Russian Math Olympiad 2018-2019. Russian/Israeli citizen.">
-    <meta name="keywords" content="remote job, freelance, developer, Docker, Python, Node.js, Git, Linux, DynamoDB, React, Netlify">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Hire Iakov Gertsenshtein, expert remote freelance developer specializing in Docker, Python, Node.js, NoSQL databases, APIs. Winner of Russian Math Olympiad 2018-2019. Available for remote projects worldwide.">
+    <meta name="author" content="Iakov Gertsenshtein">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yakovguertsenshtein.netlify.app/">
+    
+    <!-- Alternate Languages (hreflang) -->
+    <link rel="alternate" hreflang="en" href="https://yakovguertsenshtein.netlify.app/">
+    <link rel="alternate" hreflang="ru" href="https://yakovguertsenshtein.netlify.app/indexru.html">
+    <link rel="alternate" hreflang="he" href="https://yakovguertsenshtein.netlify.app/indexhe.html">
+    <link rel="alternate" hreflang="x-default" href="https://yakovguertsenshtein.netlify.app/">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yakovguertsenshtein.netlify.app/">
     <meta property="og:title" content="Iakov Gertsenshtein - Remote Freelance Developer">
-    <meta property="og:description" content="Remote freelance developer. Skills: Docker, Python, Node.js, NoSQL, APIs, Git, Linux. Winner Russian Math Olympiad 2018-2019.">
+    <meta property="og:description" content="Expert remote developer: Docker, Python, Node.js, NoSQL, APIs. Math Olympiad winner. Available for freelance projects.">
     <meta property="og:image" content="https://yakovguertsenshtein.netlify.app/images/photo-large.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="he_IL">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://yakovguertsenshtein.netlify.app/">
     <meta property="twitter:title" content="Iakov Gertsenshtein - Remote Freelance Developer">
-    <meta property="twitter:description" content="Remote freelance developer. Skills: Docker, Python, Node.js, NoSQL, APIs, Git, Linux.">
+    <meta property="twitter:description" content="Expert remote developer: Docker, Python, Node.js, NoSQL, APIs.">
     <meta property="twitter:image" content="https://yakovguertsenshtein.netlify.app/images/photo-large.jpg">
     
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav style="text-align:center; margin:20px; font-size:1.2em;">
-        <a href="/">English</a> | 
-        <a href="indexru.html">Русский</a> | 
-        <a href="indexhe.html">עברית</a>
+    <nav>
+        <a href="/" aria-label="English version">English</a> | 
+        <a href="indexru.html" hreflang="ru" aria-label="Russian version">Русский</a> | 
+        <a href="indexhe.html" hreflang="he" aria-label="Hebrew version">עברית</a>
     </nav>
+    
     <header class="header-photo">
         <img 
             src="images/photo-small.jpg" 
@@ -41,58 +57,87 @@
             sizes="(max-width: 600px) 100vw,
                    (max-width: 1200px) 80vw,
                    1200px"
-            alt="background"
+            alt="Iakov Gertsenshtein - Remote Freelance Developer"
             loading="lazy">
         <h1>Iakov Gertsenshtein</h1>
         <p>Remote Freelance Developer & Student</p>
     </header>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Born April 25, 2006 in Moscow. Winner of the National Russian Olympiad in Mathematics (2018–2019). Israeli and Russian citizen. Fluent in Russian, English, Hebrew.</p>
-    </section>
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Docker • Dockerfile • Docker Image</li>
-            <li>NoSQL (DynamoDB), Oracle</li>
-            <li>Python, Node.js</li>
-            <li>Git, Linux, Socks5</li>
-            <li>APIs: Telegram, Google</li>
-            <li>Render, n8n, Netlify, Cloudflare, Google Colab</li>
-            <li>React, Figma, Copywriting</li>
-        </ul>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:gertsenshteiniakov@outlook.com">gertsenshteiniakov@outlook.com</a></p>
+    
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Born April 25, 2006 in Moscow. Winner of the National Russian Olympiad in Mathematics (2018–2019). Israeli and Russian citizen. Fluent in Russian, English, Hebrew.</p>
+            <p>I specialize in remote software development with focus on modern technologies, automation, and cloud solutions. I create high-quality, efficient, and innovative products while maintaining clean and readable code.</p>
+        </section>
         
-        <form id="contact-form" onsubmit="handleSubmit(event)">
-            <label>Name:</label><input type="text" name="name" required><br>
-            <label>Surname:</label><input type="text" name="surname" required><br>
-            <label>Organization:</label><input type="text" name="organization"><br>
-            <label>Website:</label><input type="url" name="site"><br>
-            <label>Phone:</label><input type="tel" name="phone"><br>
-            <label>Email:</label><input type="email" name="email" required><br>
-            <label>Social Profiles:</label><textarea name="social"></textarea><br>
-            <label>File:</label><input type="file" name="file"><br>
-            <button type="submit">Send Message</button>
-        </form>
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li><strong>Containerization:</strong> Docker, Dockerfile, Docker Image - building, managing, and deploying containers</li>
+                <li><strong>Databases:</strong> NoSQL (DynamoDB), Oracle - data modeling and optimization</li>
+                <li><strong>Programming:</strong> Python, Node.js - backend development, scripts, and automation</li>
+                <li><strong>DevOps:</strong> Git, Linux, Socks5 - advanced work in distribution environments and version control</li>
+                <li><strong>API Development:</strong> Telegram API, Google API, RESTful services</li>
+                <li><strong>Cloud Services:</strong> Render, n8n, Netlify, Cloudflare, Google Colab</li>
+                <li><strong>Frontend & Design:</strong> React, Figma, technical and professional copywriting</li>
+            </ul>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>I'd love to hear from you and start collaborating!<br>
+            Email: <a href="mailto:gertsenshteiniakov@outlook.com">gertsenshteiniakov@outlook.com</a></p>
+            
+            <form id="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="surname">Surname:</label>
+                    <input type="text" id="surname" name="surname" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="organization">Organization:</label>
+                    <input type="text" id="organization" name="organization">
+                </div>
+                
+                <div class="form-group">
+                    <label for="site">Website:</label>
+                    <input type="url" id="site" name="site">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="social">Social Profiles:</label>
+                    <textarea id="social" name="social"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="file">File:</label>
+                    <input type="file" id="file" name="file">
+                </div>
+                
+                <button type="submit">Send Message</button>
+            </form>
 
-        <div id="form-message" style="margin-top: 20px; color: #28a745; font-weight: bold; font-size: 1.1em; display: none;">
-            Message sent successfully! Thank you – I will get back to you soon.
-        </div>
-
-        <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            var form = document.getElementById('contact-form');
-            var message = document.getElementById('form-message');
-            message.style.display = 'block';
-            form.reset();
-            setTimeout(() => { message.style.display = 'none'; }, 8000);
-        }
-        </script>
-    </section>
+            <div id="form-message">
+                Message sent successfully! Thank you – I will get back to you soon.
+            </div>
+        </section>
+    </main>
+    
     <footer>
         <p>© 2026 Iakov Gertsenshtein. All rights reserved.</p>
     </footer>
@@ -113,7 +158,21 @@
       "description": "Remote freelance developer specializing in Docker, Python, Node.js, NoSQL databases, APIs, Git, and Linux. Winner of the National Russian Olympiad in Mathematics.",
       "nationality": ["Russian", "Israeli"],
       "knowsLanguage": ["Russian", "English", "Hebrew"],
-      "alumniOf": "Winner of the National Russian Olympiad in Mathematics (2018-2019)"
+      "alumniOf": "Winner of the National Russian Olympiad in Mathematics (2018-2019)",
+      "sameAs": [
+        "https://yakovguertsenshtein.netlify.app/"
+      ]
+    }
+    </script>
+    
+    <script>
+    function handleSubmit(event) {
+        event.preventDefault();
+        var form = document.getElementById('contact-form');
+        var message = document.getElementById('form-message');
+        message.style.display = 'block';
+        form.reset();
+        setTimeout(() => { message.style.display = 'none'; }, 8000);
     }
     </script>
 </body>
