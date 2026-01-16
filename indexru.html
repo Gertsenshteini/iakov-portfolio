@@ -82,65 +82,61 @@
                 <li><strong>Frontend и дизайн:</strong> React, Figma, техническое и профессиональное копирайтинг</li>
             </ul>
         </section>
-        
-        <section id="contact">
-            <h2>Связаться со мной</h2>
-            <p>Буду рад услышать от вас и начать сотрудничество!<br>
-            Email: <a href="mailto:gertsenshteiniakov@outlook.com">gertsenshteiniakov@outlook.com</a></p>
+        <section id="downloads resume">
+    <h2>Download Resume</h2> <!-- Английский -->
+    <!-- <h2>Скачать резюме</h2> --> <!-- Русский -->
+    <!-- <h2>הורד קורות חיים</h2> --> <!-- Иврит -->
             
-            <form id="contact-form" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <label for="name">Имя:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="surname">Фамилия:</label>
-                    <input type="text" id="surname" name="surname" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="organization">Организация:</label>
-                    <input type="text" id="organization" name="organization">
-                </div>
-                
-                <div class="form-group">
-                    <label for="site">Сайт:</label>
-                    <input type="url" id="site" name="site">
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Телефон:</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="social">Социальные профили:</label>
-                    <textarea id="social" name="social"></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="file">Файл:</label>
-                    <input type="file" id="file" name="file">
-                </div>
-                
-                <button type="submit">Отправить</button>
-            </form>
+        <section id="Контакты">
+            <div class="contact-links" style="margin: 20px 0; font-size: 1.1em;">
+    <p>
+        Email: <a href="mailto:gertsenshteiniakov@outlook.com">gertsenshteiniakov@outlook.com</a>
+    </p>
+    <p>
+        LinkedIn: <a href="https://www.linkedin.com/in/IGertsenshtein" target="_blank">LinkedIn Profile</a>
+    </p>
+    <p>
+        Telegram: <a href="https/::@IakovGerc" target="_blank">@IakovGerc</a>
+    </p>
+</div>
 
-            <div id="form-message">
-                Сообщение успешно отправлено! Спасибо — свяжусь с вами в ближайшее время.
-            </div>
-        </section>
+<!-- Кнопка связи -->
+<a href="googleformru.html" class="contact-btn">Связаться со мной</a> <!-- Пример для русской -->
+    
+    <ul>
+        <li><a href="resume_en.pdf" download>English</a></li>
+        <li><a href="resume_ru.pdf" download>Русский</a></li>
+        <li><a href="resume_he.pdf" download>עברית</a></li>
+    </ul>
+</section>
     </main>
     
     <footer>
         <p>© 2026 Яков Герценштейн. Все права защищены.</p>
         <a href="googleformru.html" class="contact-btn">связаться со мной</a>
+        
+        <!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Яков Герценштейн",
+  "alternateName": "Iakov Gertsenshtein",
+  "url": "https://iakovguertsenshtein.netlify.app",
+  "email": "gertsenshteiniakov@outlook.com",
+  "jobTitle": "Удалённый Freelance Разработчик",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance"
+  },
+  "description": "Удалённый freelance разработчик, специализирующийся на Docker, Python, Node.js, NoSQL базах данных, APIs, Git и Linux.",
+  "nationality": ["Russian", "Israeli"],
+  "knowsLanguage": ["Russian", "English", "Hebrew"],
+  "sameAs": [
+    "https://iakovguertsenshtein.netlify.app/indexru.html"
+  ]
+}
+</script>
     </footer>
     </script>
 </body>
