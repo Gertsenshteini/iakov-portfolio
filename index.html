@@ -83,57 +83,24 @@
             </ul>
         </section>
         
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>I'd love to hear from you and start collaborating!<br>
-            Email: <a href="mailto:gertsenshteiniakov@outlook.com">gertsenshteiniakov@outlook.com</a></p>
-            
-            <form id="contact-form" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="surname">Surname:</label>
-                    <input type="text" id="surname" name="surname" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="organization">Organization:</label>
-                    <input type="text" id="organization" name="organization">
-                </div>
-                
-                <div class="form-group">
-                    <label for="site">Website:</label>
-                    <input type="url" id="site" name="site">
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone:</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="social">Social Profiles:</label>
-                    <textarea id="social" name="social"></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="file">File:</label>
-                    <input type="file" id="file" name="file">
-                </div>
-                
-                <button type="submit">Send Message</button>
-            </form>
-
-            <div id="form-message">
-                Message sent successfully! Thank you – I will get back to you soon.
+        <section id="downloads">
+    <h2>Download Resume</h2> <!-- English -->
+    <!-- <h2>Скачать резюме</h2> --> <!-- Russian -->
+    <!-- <h2>הורד קורות חיים</h2> --> <!-- Hebrew -->
+    
+    <ul>
+        <li><a href="resume_en.pdf" download>English</a></li>
+        <li><a href="resume_ru.pdf" download>Русский</a></li>
+        <li><a href="resume_he.pdf" download>עברית</a></li>
+    </ul>
+</section>
+            <div class="contact-links" style="margin: 20px 0; font-size: 1.1em;">
+    <p>
+        Email: <a href="mailto:gertsenshteiniakov@outlook.com">gertsenshteiniakov@outlook.com</a>
+    </p>
+    <p>
+        LinkedIn: <a href="https://www.linkedin.com/in/IGertsenshtein" target="_blank">LinkedIn Profile</a>
+    </p>
             </div>
         </section>
     </main>
@@ -143,5 +110,26 @@
         <a href="googleformeng.html" class="contact-btn">Contact Me</a>
     </footer>
     </script>
+    <!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Iakov Gertsenshtein",
+  "url": "https://yakovguertsenshtein.netlify.app",
+  "email": "gertsenshteiniakov@outlook.com",
+  "jobTitle": "Remote Freelance Developer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance"
+  },
+  "description": "Remote freelance developer specializing in Docker, Python, Node.js, NoSQL databases, APIs, Git, and Linux.",
+  "nationality": ["Russian", "Israeli"],
+  "knowsLanguage": ["Russian", "English", "Hebrew"],
+  "sameAs": [
+    "https://yakovguertsenshtein.netlify.app/"
+  ]
+}
+</script>
 </body>
 </html>
