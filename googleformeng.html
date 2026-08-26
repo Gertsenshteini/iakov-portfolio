@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.3/supabase.min.js"></script>
+    <script src="https://.cloudflare.com//libs/supabase//supabase..js"></script>
     <style>
         * {
             margin: 0;
@@ -315,8 +315,8 @@
     </div>
     
     <script>
-        const SUPABASE_URL = 'aekqrebbefjnvnyotfvd.supabase.co';
-        const SUPABASE_ANON_KEY = 'sb_publishable_sgVYG7QwcvaqVPM0EtLMzg_7AQvF5lq'
+        const SUPABASE_URL = '';
+        const SUPABASE_ANON_KEY = ''
 
         const supabase = new SupabaseClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         
@@ -329,15 +329,12 @@
         form.addEventListener('submit', async (e) {
             e.preventDefault();
             
-            // Отключаем кнопку и показываем загрузку
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<span class="loading"></span> Sending...';
             
             try {
-                // Собираем данные формы
                 const formData = new FormData(form);
                 
-                // Собираем все выбранные интересы
                 const interests = [];
                 formData.getAll('interest').forEach(value => interests.push(value));
                 
@@ -351,18 +348,15 @@
                     created_at: new Date().toISOString()
                 };
                 
-                // Отправляем данные в Supabase
                 const { error } = await supabase
                     .from('form_submissions') // Название таблицы
                     .insert([data]);
                 
                 if (error) throw error;
                 
-                // Показываем сообщение об успехе
                 form.style.display = 'none';
                 successMessage.classList.add('show');
                 
-                // Через 3 секунды возвращаем форму
                 setTimeout(() => {
                     form.style.display = 'block';
                     successMessage.classList.remove('show');
@@ -374,12 +368,10 @@
             } catch (error) {
                 console.error('Error:', error);
                 
-                // Показываем сообщение об ошибке
                 form.style.display = 'none';
                 errorText.textContent = error.message || 'An error occurred while sending the form. Please try again.';
                 errorMessage.classList.add('show');
                 
-                // Через 3 секунды возвращаем форму
                 setTimeout(() => {
                     form.style.display = 'block';
                     errorMessage.classList.remove('show');
