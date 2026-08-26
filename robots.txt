@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://iakovguertsenshtein.netlify.app/sitemap.xml
+Sitemap: https://einshtein.netlify.app/sitemap.xml
